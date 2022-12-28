@@ -1,12 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
     // const are here!
     const Navigate = useNavigate();
     const [currentUser, setCurrentUser] = useState(JSON.parse(localStorage.getItem("user")) || null,);
+    useEffect(() => {
+      if(currentUser===null){
+        Navigate('/login');
+      }
    
+    }, [])
+    
 
   return (
     <div className='dashboard'>

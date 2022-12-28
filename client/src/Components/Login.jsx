@@ -3,28 +3,16 @@ import "../index.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const Login = () => {
-
+ 
   const Navigate = useNavigate();
   
   // constants
   const [login, setLogin] = useState("login");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [gender, setGender] = useState("Male");
-  const [Hobbies, setHobbies] = useState("");
   const [location, setLocation] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState({
-    firstName:"Jitendra",
-    lastName:"saini",
-    employeeId:"14256",
-    department:"IT",
-    email:"ok@mail.com",
-    location:"faridabad",
-    hobbies:"Coding & Reading",
-    isManager:true,
-  });
 
   // functions here!
   const randomFixedInteger = (length)=> {
@@ -51,7 +39,7 @@ const Login = () => {
               Navigate('/');
             }
           }catch(error){
-            console.log(error);
+            window.alert(error);
           }
         }
     }else{
@@ -68,7 +56,7 @@ const Login = () => {
             window.alert(res.data);   
           } 
         }catch(error){
-          console.log(error);
+          window.alert(error);
         }
       }
       setLogin('login');
